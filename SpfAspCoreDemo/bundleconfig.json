@@ -1,0 +1,9 @@
+[
+  {
+    "outputFileName": "wwwroot/lib/spf/spf.js",
+    "inputFiles": [
+      "node_modules/spf/dist/spf.js"
+    ],
+    "minify": { "enabled": false }
+  }
+]

@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>SpfAspCoreDemo</RootNamespace>
+    <AssemblyName>SpfAspCoreDemo</AssemblyName>
+    <PackageId>SpfAspCoreDemo</PackageId>
+    <Authors>SpfAspCoreDemo</Authors>
+    <Company>SpfAspCoreDemo</Company>
+    <Product>SpfAspCoreDemo</Product>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BuildBundlerMinifier" Version="3.2.449" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SpfAspCore\SpfAspCore.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,86 @@
+﻿<!doctype HTML>
+<!--
+Copyright 2012 Google Inc. All rights reserved.
+
+Use of this source code is governed by The MIT License.
+See the LICENSE file for details.
+-->
+<html>
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="~/css/app.css" name="app" />
+    <style name="home">
+        #home .col {
+            width: 50%;
+            float: left;
+            margin-bottom: 2em;
+        }
+
+            #home .col p {
+                padding-right: 1em;
+            }
+
+        #home .extra {
+            clear: left;
+            border-top: 1px solid #E3E3E3;
+        }
+
+        #home-full, #home-partial {
+            padding: .5em;
+            border: 1px solid #CCC;
+        }
+
+        #home-full {
+            border-color: #19B319;
+        }
+
+        #home-partial {
+            border-color: #F00;
+        }
+    </style>
+
+    @RenderSection("head", required: false)
+</head>
+<body data-spf-name="home">
+    <div id="masthead">
+        <strong>S</strong>tructured <strong>P</strong>age <strong>F</strong>ragments
+        <span class="info">
+            Status: <span id="app-status">Disabled</span>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            Last refresh: <span id="app-timer">0</span>s ago
+        </span>
+    </div>
+    <div id="nav">
+        <!-- pages for testing navigation -->
+        <ul style="float:right">
+            <li class="nav-demo1"><a class="spf-link" href="/demo/demo1">Demo 1</a></li>
+            <li class="nav-demo2"><a class="spf-link" href="/demo/demo2">Demo 2</a></li>
+            <li class="nav-demo3"><a class="spf-link" href="/demo/demo3">Demo 3</a></li>
+            <li class="nav-demo4"><a class="spf-link" href="/demo/demo4">Demo 4</a></li>
+            <li class="nav-demo5"><a class="spf-link" href="/demo/demo5">Demo 5</a></li>
+        </ul>
+        <!-- pages with real content -->
+        <ul>
+            <li class="nav-home"><a class="spf-link" href="/">Overview</a></li>
+            <li class="nav-spec"><a class="spf-link" href="/spec">Spec</a></li>
+        </ul>
+    </div>
+    <div id="content" class="spf-animate">
+
+        @RenderBody()
+
+    </div>
+
+    <script src="~/lib/spf/spf.js"></script>
+    <script src="~/js/app.js"></script>
+    <script>
+        app.init();
+    </script>
+
+    <div id="script">
+        @RenderSection("script", required: false)
+    </div>
+    
+
+</body>
+</html>
