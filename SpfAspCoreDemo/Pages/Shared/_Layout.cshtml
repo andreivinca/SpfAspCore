@@ -7,7 +7,7 @@ See the LICENSE file for details.
 -->
 <html>
 <head>
-    <title>Home</title>
+    <title>@ViewData["Title"]</title>
     <link rel="stylesheet" href="~/css/app.css" name="app" />
     <style name="home">
         #home .col {
@@ -41,6 +41,7 @@ See the LICENSE file for details.
 
     @RenderSection("head", required: false)
 </head>
+
 <body data-spf-name="home">
     <div id="masthead">
         <strong>S</strong>tructured <strong>P</strong>age <strong>F</strong>ragments
