@@ -45,11 +45,16 @@ namespace SPFSpfAspCoreJSASPCORE.SPFBuilder
             }
 
             // add content
-            foreach (var node in GetSPFContentNodes())
-            {
-                node.AddSPFContent(result);
-            }
+            var contentNodes = GetSPFContentNodes();
 
+            if (contentNodes != null)
+            {
+                foreach (var node in GetSPFContentNodes())
+                {
+                    node.AddSPFContent(result);
+                }
+            }
+            
             var sResult = result.ToString();
             var bResult = Encoding.UTF8.GetBytes(sResult);
 
@@ -59,8 +64,6 @@ namespace SPFSpfAspCoreJSASPCORE.SPFBuilder
         private HtmlNodeCollection GetSPFContentNodes()
         {
             var nodes = HtmlDocument.DocumentNode.SelectNodes("//*[@spf-content]");
-
-            var a = nodes[0];
             return nodes;
         }
 
