@@ -1,6 +1,6 @@
 ﻿using HtmlAgilityPack;
 using Newtonsoft.Json.Linq;
-using SpfAspCore.SPFBuilder;
+using SpfAspCore.Extensions;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -41,7 +41,17 @@ namespace SPFSpfAspCoreJSASPCORE.SPFBuilder
             var titleNode = GetSPFTitleNode();
             if (titleNode != null)
             {
-                titleNode.AddSPFTitle(result);
+                titleNode.AddSpfTitle(result);
+            }
+
+            //add attrs
+            var attrNodes = GetSPFAttrNodes();
+            if(attrNodes != null)
+            {
+                foreach (var node in attrNodes)
+                {
+                    node.AddSpfAttr(result);
+                }
             }
 
             // add content
@@ -49,9 +59,9 @@ namespace SPFSpfAspCoreJSASPCORE.SPFBuilder
 
             if (contentNodes != null)
             {
-                foreach (var node in GetSPFContentNodes())
+                foreach (var node in contentNodes)
                 {
-                    node.AddSPFContent(result);
+                    node.AddSpfContent(result);
                 }
             }
             
@@ -71,6 +81,12 @@ namespace SPFSpfAspCoreJSASPCORE.SPFBuilder
         {
             var nodes = HtmlDocument.DocumentNode.SelectSingleNode("//title");
 
+            return nodes;
+        }
+
+        private HtmlNodeCollection GetSPFAttrNodes()
+        {
+            var nodes = HtmlDocument.DocumentNode.SelectNodes("//*[@spf-attr]");
             return nodes;
         }
 

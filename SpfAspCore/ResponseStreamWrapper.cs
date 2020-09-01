@@ -88,6 +88,7 @@ namespace SpfAspCore
 
             if (_context.IsSPFRequest() && IsHtmlResponse())
             {
+                _context.Response.ContentType = "application/json";
                 await SPFASPCOREInjectionHelper.InjectSpfCoreAsync(buffer, offset, count, _context, _baseStream);
             }
             else

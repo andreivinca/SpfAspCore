@@ -6,9 +6,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace SpfAspCore.SPFBuilder
+namespace SpfAspCore.Extensions
 {
-    public static class SpfJObject
+    public static class ExSpfJObject
     {
         public static void AppendNodePath(this JObject result, string path, string htmlValue)
         {

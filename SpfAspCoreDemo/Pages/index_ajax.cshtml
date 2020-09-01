@@ -1,11 +1,26 @@
 ﻿@page
-@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
 @model indexAjaxModel
 @{
     Layout = null;
+
+    ViewData["spf-attr"] = new
+    {
+        home_ajax_out = new System.Collections.Generic.Dictionary<string, string>()
+        {
+            { "class", "lucky-num" },
+            { "style", "border: 1px solid blue" },
+            { "title", "You have a lucky number!" }
+        }
+    };
 }
 
+<style name="home-ajax" spf-content="head">
+    #home .lucky-num {
+        font-weight: bold;
+    }
+</style>
 
-<div spf-content="body/home_ajax_out">
-    @Model.random
-</div>
+<li spf-placeholder-attr="home_ajax_out" spf-content="body/home_ajax_out">
+    Your lucky number is @Model.random.
+</li>
