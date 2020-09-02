@@ -1,4 +1,4 @@
-[![NuGet version (SpfAspCore)](https://img.shields.io/nuget/v/SpfAspCore.svg?style=flat-square)](https://www.nuget.org/packages/SpfAspCore/0.0.1/)
+[![NuGet version (SpfAspCore)](https://img.shields.io/nuget/v/SpfAspCore.svg?style=flat-square)](https://www.nuget.org/packages/SpfAspCore/)
 
 # SpfAspCore
 (POC) Backend implementation in Asp.Net Core (3.1) for SpfJS - library made and used by YouTube
